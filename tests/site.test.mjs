@@ -130,3 +130,13 @@ test("the project remains dependency and framework free", async () => {
   assert.doesNotMatch(source, /\b(?:react|next(?:\.js)?|tailwind|vue|angular|svelte)\b/i);
   assert.doesNotMatch(packageJson ?? "", /"(?:dependencies|devDependencies)"\s*:/);
 });
+
+test("Vercel serves the static output produced by the project build", async () => {
+  const configSource = await readProjectFile("vercel.json");
+
+  assert.notEqual(configSource, null, "vercel.json must exist");
+  const config = JSON.parse(configSource);
+  assert.equal(config.framework, null);
+  assert.equal(config.buildCommand, "npm run build");
+  assert.equal(config.outputDirectory, "dist/client");
+});
