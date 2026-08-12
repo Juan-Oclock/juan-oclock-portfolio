@@ -65,7 +65,7 @@ The desktop layout uses an editorial split hero and multi-column work grid. Tabl
 
 ## Architecture and Data Flow
 
-The site is one lightweight responsive route composed of semantic sections. Content is local and static; no database, authentication, external data, analytics, or form service is required. Navigation targets section IDs, portfolio content is defined in a small local data structure, and email actions use a `mailto:` link to `hi@juan-oclock.com`.
+The site is one lightweight static page composed only of semantic HTML, handwritten CSS, and small vanilla JavaScript. It uses no React, Next.js, Tailwind, UI library, framework runtime, database, authentication, external data, analytics, or form service. Navigation targets section IDs, portfolio content is authored directly in the HTML, and email actions use a `mailto:` link to `hi@juan-oclock.com`.
 
 Because there is no remote data or form submission, application-level error states are unnecessary. Images include useful alternative text and layouts avoid depending on images to communicate essential project information.
 
@@ -90,6 +90,7 @@ The page title and description identify Juan Oclock as a web and iOS developer. 
 - Blog or case-study detail routes
 - Authentication, analytics, or persistent storage
 - Invented testimonials, client logos, or social accounts
+- JavaScript frameworks, CSS frameworks, component libraries, and framework build tooling
 
 ## Success Criteria
 
